@@ -1,0 +1,1 @@
+Folder for storing css, js and pictures for different blocks on pages.

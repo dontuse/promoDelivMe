@@ -1,0 +1,26 @@
+@path : '../blocks/b-rub/b-rub_tahoma/alsrubl-tahoma' ;
+
+@font-face {
+  font-family: 'ALSRubl-Tahoma';
+  src: url('@{path}-regular.eot');
+  src: url('@{path}-regular.eot?#iefix') format('embedded-opentype'),url('alsrubl-tahoma-regular.woff') format('woff'), url('@{path}-regular.ttf') format('truetype'), url('@{path}-regular.svg#ALSRublTahomaItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ALSRubl-Tahoma';
+  src: url('@{path}-bold.eot');
+  src: url('@{path}-bold.eot?#iefix') format('embedded-opentype'), url('@{path}-bold.woff') format('woff'), url('@{path}-bold.ttf') format('truetype'), url('@{path}-bold.svg#ALSRublTahomaItalic') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*
+  ХТМЛ: 100 <span class="b-rub">Р</span>
+  Если вам нужен рубль в нескольких шрифтах, используйте .b-rub_tahoma, вместо .b-rub
+*/
+.b-rub, .b-rub_tahoma {
+  font-family: 'ALSRubl-Tahoma', Tahoma, sans-serif;
+  line-height: normal;
+}
