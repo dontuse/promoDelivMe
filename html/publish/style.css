@@ -946,6 +946,184 @@ textarea {
   margin-bottom: 20px;
 }
 /*===| .b-promo-box |======================end==========================================*/
+/*---| .b-banner |----------------------start----------------------------------------*/
+.b-banner {
+  margin-bottom: 35px;
+}
+/*===| .b-banner |======================end==========================================*//*---| .b-cnt__el |----------------------start----------------------------------------*/
+.b-cnt {
+  *zoom: 1;
+}
+.b-cnt:before,
+.b-cnt:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.b-cnt:after {
+  clear: both;
+}
+.b-cnt__el {
+  background: #e9ece4;
+  float: left;
+  width: 460px;
+  background: url("../blocks//i-img/b-footer__pattern.png");
+  margin-bottom: 20px;
+  margin-right: 20px;
+  position: relative;
+  height: 192px;
+}
+.b-cnt__el:nth-child(2n) {
+  margin-right: 0;
+}
+.b-cnt__el-arrw {
+  width: 60px;
+  background: #ff791d;
+  height: 100%;
+  position: absolute;
+}
+.b-cnt__el-arrw:after {
+  content: '';
+  background-repeat: no-repeat;
+  background-image: url("../blocks//i-img/cnt-icon-1.png");
+  background-position: top center;
+  position: absolute;
+  width: 56px;
+  height: 50px;
+  top: 76px;
+  left: 14px;
+}
+.b-cnt__el-arrw:before {
+  content: '';
+  background: url("../blocks//i-img/_b-cnt-arrow.png") no-repeat center left;
+  left: 100%;
+  position: absolute;
+  width: 34px;
+  background-size: cover;
+  height: 100%;
+}
+.b-cnt__el-inner {
+  padding-left: 100px;
+  padding-top: 15px;
+  padding-right: 38px;
+}
+.b-cnt__el-h {
+  color: #de5b01;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.b-cnt__el-p {
+  color: #414141;
+  font-size: 14px;
+  line-height: 20px;
+}
+.b-cnt__el_1 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/1.png");
+}
+.b-cnt__el_2 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/2.png");
+}
+.b-cnt__el_3 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/3.png");
+}
+.b-cnt__el_4 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/4.png");
+}
+.b-cnt__el_5 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/5.png");
+}
+.b-cnt__el_6 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/6.png");
+}
+.b-cnt__el_7 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/7.png");
+}
+.b-cnt__el_8 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/8.png");
+}
+.b-cnt__el_9 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/9.png");
+}
+.b-cnt__el_10 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/10.png");
+}
+.b-cnt__el_11 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/11.png");
+}
+.b-cnt__el_12 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/12.png");
+}
+.b-cnt__el_13 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/13.png");
+}
+.b-cnt__el_14 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/14.png");
+}
+.b-cnt__el_15 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/15.png");
+}
+.b-cnt__el_16 .b-cnt__el-arrw:after {
+  background-image: url("../blocks//i-img/cnt-icons/16.png");
+}
+/*===| .b-cnt__el |======================end==========================================*//*---| .b-terms |----------------------start----------------------------------------*/
+.b-terms__term {
+  background: url("../blocks//i-img/term.png") no-repeat top left;
+  height: 117px;
+}
+.b-terms__num {
+  float: left;
+  font-size: 38px;
+  color: #ffffff;
+  width: 94px;
+  text-align: center;
+  text-shadow: 2px 3px rgba(0, 0, 0, 0.29);
+  margin-left: 50px;
+  line-height: 106px;
+}
+.b-terms__how {
+  float: left;
+  font-size: 30px;
+  color: #de5b01;
+  padding-top: 39px;
+  line-height: 1;
+  width: 232px;
+}
+.b-terms__txt {
+  overflow: hidden;
+  padding-top: 39px;
+}
+/*===| .b-terms |======================end==========================================*//*---| .b-apps |----------------------start----------------------------------------*/
+.b-apps {
+  *zoom: 1;
+  background: #ff791d;
+}
+.b-apps:before,
+.b-apps:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.b-apps:after {
+  clear: both;
+}
+.b-apps__inner {
+  position: relative;
+  height: 255px;
+}
+.b-apps__phone {
+  width: 277px;
+  height: 329px;
+  background: url("../blocks//i-img/aps-hand.png") no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.b-apps__txt {
+  padding-left: 300px;
+}
+/*===| .b-apps |======================end==========================================*//*===========*/
 /*---| .b-media |----------------------start----------------------------------------*/
 @media screen and (max-width: 650px) {
   .b-promo-box__col {
@@ -955,14 +1133,32 @@ textarea {
   .b-wrapper {
     width: auto;
   }
+  .b-cnt__el {
+    width: auto;
+    float: none;
+    margin-right: 0;
+    height: auto;
+  }
+  .b-cnt__el-inner {
+    padding-right: 10px;
+    padding-left: 78px;
+    padding-bottom: 20px;
+  }
+  .b-cnt__el-arrw {
+    border-right: 2px solid #afaea6;
+  }
+  .b-cnt__el-arrw:before {
+    display: none;
+  }
+  .b-cnt__el-arrw:after {
+    background-size: contain;
+    width: 50px;
+    height: 40px;
+    left: 5px;
+    top: 20px;
+  }
+  .b-header__slog {
+    display: none;
+  }
 }
-/*===| .b-media |======================end==========================================*//*---| .b-banner |----------------------start----------------------------------------*/
-.b-banner {
-  margin-bottom: 35px;
-}
-/*===| .b-banner |======================end==========================================*//*---| .b-cnt__el |----------------------start----------------------------------------*/
-.b-cnt__el {
-  background: #e9ece4;
-  margin-bottom: 20px;
-}
-/*===| .b-cnt__el |======================end==========================================*/
+/*===| .b-media |======================end==========================================*/
