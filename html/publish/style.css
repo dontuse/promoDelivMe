@@ -681,7 +681,6 @@ textarea {
 .b-footer {
   background: url("../blocks//i-img/b-footer__pattern.png");
   height: 87px;
-  margin-top: -87px;
 }
 /*===| .b-footer |======================end==========================================*//*---| .b-page |----------------------start----------------------------------------*/
 .b-page {
@@ -1123,7 +1122,25 @@ textarea {
 .b-apps__txt {
   padding-left: 300px;
 }
-/*===| .b-apps |======================end==========================================*//*===========*/
+/*===| .b-apps |======================end==========================================*//*---| .b-info |----------------------start----------------------------------------*/
+.b-info {
+  background: #ebeee6;
+  *zoom: 1;
+}
+.b-info:before,
+.b-info:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.b-info:after {
+  clear: both;
+}
+.b-info__col {
+  float: left;
+  width: 50%;
+}
+/*===| .b-info |======================end==========================================*//*===========*/
 /*---| .b-media |----------------------start----------------------------------------*/
 @media screen and (max-width: 650px) {
   .b-promo-box__col {
