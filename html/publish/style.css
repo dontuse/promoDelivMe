@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100&subset=latin,cyrillic-ext);
 .clearFix {
   *zoom: 1;
 }
@@ -600,6 +601,10 @@ textarea {
   resize: vertical;
 }
 /*---| b-text |----------------------------------------------------------------*/
+.b-text {
+  margin-bottom: 33px;
+  text-align: center;
+}
 .b-text__p {
   margin: 0;
   margin-bottom: 1em;
@@ -708,6 +713,7 @@ textarea {
 .b-content {
   overflow: hidden;
   padding-bottom: 200px;
+  padding-top: 40px;
 }
 /*===| .b-content |======================end==========================================*//*---| .b-input |----------------------start----------------------------------------*/
 .b-input {
@@ -893,6 +899,17 @@ textarea {
   padding: 5px;
   margin-bottom: 31px;
   text-decoration: none;
+  -webkit-box-shadow: 1px 2px #bbbbbb;
+  -moz-box-shadow: 1px 2px #bbbbbb;
+  box-shadow: 1px 2px #bbbbbb;
+  -webkit-transition: background 0.5s ease;
+  -moz-transition: background 0.5s ease;
+  -o-transition: background 0.5s ease;
+  -ms-transition: background 0.5s ease;
+  transition: background 0.5s ease;
+}
+.b-promo-box__lnk:hover {
+  background: #e0ddd4;
 }
 .b-promo-box__img {
   height: 199px;
@@ -945,6 +962,37 @@ textarea {
   margin-bottom: 20px;
 }
 /*===| .b-promo-box |======================end==========================================*/
+.b-title {
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 43px;
+  color: #414141;
+  text-transform: uppercase;
+  text-align: center;
+}
+.b-h-part {
+  height: 331px;
+  background: url("../blocks//i-img/head-imgs/head-img-1.jpg") no-repeat center top;
+}
+.b-h-part__inner {
+  position: relative;
+}
+.b-h-part__cnt {
+  position: absolute;
+  top: 93px;
+  left: 0;
+  width: 300px;
+}
+.b-h-part__title {
+  font-size: 40px;
+  color: #de5b01;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-family: Roboto, Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+}
+.b-h-part__txt {
+  font-size: 24px;
+}
 /*---| .b-banner |----------------------start----------------------------------------*/
 .b-banner {
   margin-bottom: 35px;
