@@ -1,3 +1,32 @@
+ko.bindingHandlers.datepicker = {
+    init: function(element, valueAccessor, allBindingsAccessor) {
+        //initialize datepicker with some optional options
+        var options = allBindingsAccessor().datepickerOptions || {};
+        $(element).datepicker(options);
+
+        //handle the field changing
+        ko.utils.registerEventHandler(element, "change", function () {
+            var observable = valueAccessor();
+            observable($(element).datepicker("getDate"));
+        });
+
+        //handle disposal (if KO removes by the template binding)
+        ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
+            $(element).datepicker("destroy");
+        });
+
+    },
+    //update the control when the view model changes
+    update: function(element, valueAccessor) {
+        var value = ko.utils.unwrapObservable(valueAccessor()),
+            current = $(element).datepicker("getDate");
+
+        if (value - current !== 0) {
+            $(element).datepicker("setDate", value);
+        }
+    }
+};
+
 
 
 ko.validation.localize({
@@ -35,7 +64,15 @@ function formViewModel() {
 
     var self = this;
 
-    this.fio = ko.observable('qwewqe').extend({
+    self.folders = ['1', '2', '3', '4'];
+    self.chosenFolderId = ko.observable();
+
+    self.goToFolder = function(folder) {
+        self.chosenFolderId(folder);
+        console.log(folder)
+    };
+
+    this.fio = ko.observable('Абрахим Абрахим ').extend({
         required: true
     });
 
@@ -44,27 +81,49 @@ function formViewModel() {
         required: true
     });
 
-    this.phone = ko.observable(123213).extend({
+/*    this.phone = ko.observable(123213).extend({
         required: true,
         digit: true
-    });
+    });*/
 
-    this.site = ko.observable('site').extend({
+    this.birthday = ko.observable().extend({
         required: true
     });
 
-    this.optionValues = [
-        '00:00 – 01:00',
-        '01:00 – 02:00',
-        '03:00 – 04:00',
-        '04:00 – 05:00',
-        '05:00 – 06:00'
+    this.pff = function() {
+        $('#q').focus();
+        console.log('qqqq');
+    }
 
+    this.phone = {
+        code: ko.observable(777).extend({
+            required: true,
+            digit: true
+        }),
+        num: ko.observable(213123123).extend({
+            required: true,
+            digit: true
+        })
+    }
+
+    this.fullPhone = ko.computed(function(){
+        return(self.phone.code() +' +++ '+ self.phone.num());
+        //return 2 + 2;
+    },this);
+
+
+    this.educationValues = [
+        'начальное',
+        'основное',
+        'среднее',
+        'неполное высшее',
+        'высшее'
     ];
+
+    this.subscription = ko.observable().extend({ required: true });
 
     this.multipleSelectedOptionValues = [
         '05:00 – 06:00'
-
     ]
 
     this.done = ko.observable(false);
@@ -74,9 +133,10 @@ function formViewModel() {
 
     this.submit = function () {
         console.log(this);
+        console.log(self.fullPhone());
         if (this.errors().length == 0) {
             $.ajax("ajax/cy.json", {
-                data: ko.toJSON({ tasks: self }),
+                data: ko.toJSON({tasks: self}),
                 type: "post", contentType: "application/json",
                 success: function(result) {
                     self.done(true);
@@ -92,6 +152,13 @@ function formViewModel() {
     }
 
     this.errors = ko.validation.group(this);
+    //this.errors = ko.validation.group(this.phone);
+
+    this.next = function() {
+        return false;
+    };
+
+
 
 }
 

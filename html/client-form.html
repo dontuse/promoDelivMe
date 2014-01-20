@@ -38,11 +38,11 @@
 
                    <h2 class="b-title">Заявка на подключение системы Deliv.me</h2>
 
-                <div class="b-box b-box__form">
-                    <form method="post">
+                <div data-bind="visible: form" class="b-box b-box__form">
+                    <form data-bind="submit: submit" method="post">
                         <div class="b-control">
                             <div class="b-contol__col-1">
-                                <label class="b-contol__label" class="">ФИО: *</label>
+                                <label class="b-contol__label" class="">ФИО: <i class="b-contol__r">*</i></label>
                             </div>
                             <div class="b-contol__col-2">
                                 <input data-bind="value:fio" class="b-contol__input">
@@ -50,7 +50,7 @@
                         </div>
                         <div class="b-control">
                             <div class="b-contol__col-1">
-                                <label  class="b-contol__label" class="">E-mail: *</label>
+                                <label  class="b-contol__label" class="">E-mail: <i class="b-contol__r">*</i></label>
                             </div>
                             <div class="b-contol__col-2">
                                 <input data-bind="value: email" class="b-contol__input">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="b-control">
                             <div class="b-contol__col-1">
-                                <label  class="b-contol__label" class="">Телефон: *</label>
+                                <label  class="b-contol__label" class="">Телефон: <i class="b-contol__r">*</i></label>
                             </div>
                             <div class="b-contol__col-2">
                                 <input data-bind="value: phone" class="b-contol__input">
@@ -70,20 +70,7 @@
                                 <label class="b-contol__label" class="">Укажите время, когда вам можно позвонить:</label>
                             </div>
                             <div class="b-contol__col-2">
-                                <select multiple="multiple" class="b-contol__select-multiple">
-                                    <option>00:00 – 01:00</option>
-                                    <option>01:00 – 02:00</option>
-                                    <option>02:00 – 03:00</option>
-                                    <option>03:00 – 04:00</option>
-                                    <option>04:00 – 05:00</option>
-                                    <option>05:00 – 06:00</option>
-                                    <option>06:00 – 07:00</option>
-                                    <option>07:00 – 08:00</option>
-                                    <option>08:00 – 09:00</option>
-                                    <option>09:00 – 10:00</option>
-                                    <option>10:00 – 11:00</option>
-                                    <option>11:00 – 12:00</option>
-                                    <option selected >13:00 – 14:00</option>
+                                <select data-bind="options: optionValues, selectedOptions: multipleSelectedOptionValues" multiple="multiple" class="b-contol__select-multiple">
 
                                 </select>
                             </div>
@@ -104,13 +91,27 @@
                                 <input class="b-contol__input">
                             </div>
                         </div>
-                        <div class="">
-                            <a data-bind='click: fufu' class="b-button" href="">ОТПРАВИТЬ ЗАЯВКУ</a>
+                        <div style="margin-bottom: 20px;" class="">
+                            <a data-bind='click: submit' class="b-button" href="">ОТПРАВИТЬ ЗАЯВКУ</a>
                         </div>
+
                     </form>
                 </div>
 
+                <div style="display: none" data-bind="visible: done" class="b-box b-box__form">
+                    <div class="b-text">
+                        <h2 class="b-title">Спасибо!</h2>
+                        <p class="b-text__p">Ваша заявка успешно отправлена!</p>
+                        <p class="b-text__p">В течение 24 часов наш менеджер свяжется с вами для заключения договора  в удобное для вас время. </p>
+                        <p class="b-text__p">
+                            Договор  заключается сроком на 1 год с автоматической пролонгацией, оформляется в течение 7 дней (и менее) – в зависимости от сложности работ по интеграции нашего сервиса в корзину на вашем сайте.
+                        </p>
+
+                    </div>
+                </div>
             </div>
+
+
 
         </div>
 

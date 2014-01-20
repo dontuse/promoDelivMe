@@ -672,6 +672,10 @@ textarea {
   width: 474px;
   margin: 0 auto;
 }
+.b-box__form-courier {
+  width: 675px;
+  margin: 0 auto;
+}
 /*---| .b-wrapper |----------------------start----------------------------------------*/
 .b-wrapper {
   width: 941px;
@@ -805,6 +809,10 @@ textarea {
   background: #fff0f0;
   border: solid 1px #d72800;
   box-shadow: 0 0 0 1px #d72800;
+}
+.b-contol__r {
+  color: #de5b01;
+  font-style: normal;
 }
 /*---| .b-logo |----------------------start----------------------------------------*/
 .b-logo,
@@ -1297,6 +1305,9 @@ textarea {
   }
   .b-header__slog {
     display: none;
+  }
+  .b-box__form {
+    width: auto;
   }
 }
 /*===| .b-media |======================end==========================================*/

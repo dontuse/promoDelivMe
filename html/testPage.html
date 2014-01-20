@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="publish/style.css">
+    <script src="js/lib/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+
+<div class="b-page">
+    <div class="b-page__wrap">
+        <header class="b-header">
+            <div class="b-wrapper b-wrapper_header b-header__wrap">
+
+                <a class="b-logo" href="/">LoveLess Foundation</a>
+
+                <div class="b-header__slog">Служба курьерской доставки</div>
+            </div>
+        </header>
+
+        <div class="b-wrapper">
+            <div class="b-content">
+
+                <h2 class="b-title"></h2>
+                <div>
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                </div>
+
+                <div class="b-box b-box__form-courier">
+                    <div class="b-control">
+                        <div class="b-contol__col-1">
+                            <label class="b-contol__label" class="">ФИО: <i class="b-contol__r">*</i></label>
+                        </div>
+                        <div class="b-contol__col-2">
+                            <input data-bind="value: fio " class="b-contol__input">
+                        </div>
+                    </div>
+
+                    <div class="b-control">
+                        <div class="b-contol__col-1">
+                            <label class="b-contol__label" class="">E-mail: <i class="b-contol__r">*</i></label>
+                        </div>
+                        <div class="b-contol__col-2">
+                            <input data-bind="value: email" class="b-contol__input">
+                        </div>
+                    </div>
+
+                    <div class="b-control">
+                        <div class="b-contol__col-1">
+                            <label class="b-contol__label" class="">Контактный телефон: <i class="b-contol__r">*</i></label>
+                        </div>
+                        <div class="b-contol__col-2">
+                            <input data-bind="value: phone.code" class="b-contol__input">
+                            <input data-bind="value: phone.num" class="b-contol__input">
+                        </div>
+                    </div>
+
+
+                    <div class="b-control">
+                        <div class="b-contol__col-1">
+                            <label class="b-contol__label" class="">Дата рождения: <i class="b-contol__r">*</i></label>
+                        </div>
+                        <div class="b-contol__col-2">
+                            <input id="q" data-bind="value: birthday , datepicker: birthday"  placeholder="дд/мм/гг" class="b-contol__input">
+                            <button data-bind="click: pff">#</button>
+                        </div>
+                    </div>
+                    <div class="b-control">
+                        <div class="b-contol__col-1">
+                            <label class="b-contol__label" class="">Образование: <i class="b-contol__r">*</i></label>
+                        </div>
+                        <div class="b-contol__col-2">
+                            <select data-bind='value: subscription, options: educationValues, optionsCaption: "выберите вариант"'  class="">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="b-control">
+                        <div class="b-contol__col-1">
+                            <label class="b-contol__label" class="">Образование: <i class="b-contol__r">*</i></label>
+                        </div>
+                        <div class="b-contol__col-2">
+                            <label>
+                                <input  checked name="x" type="radio"> М
+                            </label>
+                            <label>
+                                <input name="x" type="radio"> Ж
+                            </label>
+                        </div>
+                    </div>
+                    <pre>
+                        <span data-bind="text: fullPhone"></span>
+                    </pre>
+
+                    <button class="b-button" data-bind="click: console.log($root),click: submit;">puff</button>
+                    <button class="b-button" data-bind="click: next">Далее</button>
+                    <button class="b-button" data-bind="click:goToFolder">Далее</button>
+
+                    <div data-bind="visible: next">
+                        <h1>2</h1>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <footer class="b-footer">
+        <div class="b-wrapper">
+            <div class="b-footer__col-1">
+                © 2013 «Deliv.me» – служба курьерской доставки из магазинов Екатеринбурга
+                У вас возникли вопросы? Напишите нам!
+            </div>
+            <div class="b-footer__col-2">
+                Сайт разработан
+                компанией JetStyle
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+
+<script src="publish/script.js"></script>
+
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script src="js/lib/knockout-3.0.0.debug.js"></script>
+<script src="js/lib/knockout.validation.js"></script>
+
+<script src="js/knock-test-f.js"></script>
+
+
+</body>
+</html>
+
