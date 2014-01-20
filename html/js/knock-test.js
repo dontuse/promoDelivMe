@@ -47,6 +47,10 @@ function formViewModel() {
         digit: true
     });
 
+    this.site = ko.observable().extend({
+        required: true
+    });
+
 
 
     this.fufu = function () {
