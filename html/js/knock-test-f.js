@@ -134,6 +134,7 @@ function formViewModel() {
     this.submit = function () {
         console.log(this);
         console.log(self.fullPhone());
+        $('#pr').width('90%');
         if (this.errors().length == 0) {
             $.ajax("ajax/cy.json", {
                 data: ko.toJSON({tasks: self}),
