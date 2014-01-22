@@ -713,7 +713,7 @@ textarea {
 /*===| .b-header |======================end==========================================*//*---| .b-content |----------------------start----------------------------------------*/
 .b-content {
   overflow: hidden;
-  padding-bottom: 200px;
+  padding-bottom: 40px;
   padding-top: 40px;
 }
 /*===| .b-content |======================end==========================================*//*---| .b-input |----------------------start----------------------------------------*/
@@ -814,6 +814,34 @@ textarea {
   color: #de5b01;
   font-style: normal;
 }
+.b-contol__textarea {
+  background: red;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: solid 1px #bbb;
+  padding-left: 10px;
+  outline: none;
+  font-family: Roboto, Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  font-size: 16px;
+  height: 120px;
+  line-height: 1.3;
+  padding-top: 10px;
+}
 /*---| .b-logo |----------------------start----------------------------------------*/
 .b-logo,
 .b-logo:visited {
@@ -858,8 +886,17 @@ textarea {
   text-decoration: none;
   color: #ffffff;
   text-transform: uppercase;
+  -webkit-transition: background 0.2s ease;
+  -moz-transition: background 0.2s ease;
+  -o-transition: background 0.2s ease;
+  -ms-transition: background 0.2s ease;
+  transition: background 0.2s ease;
 }
-/*===| .b-button |======================end==========================================*//*---| .b-dec-select |----------------------start----------------------------------------*/
+/*===| .b-button |======================end==========================================*/
+.b-button:hover {
+  background: #96c93c;
+}
+/*---| .b-dec-select |----------------------start----------------------------------------*/
 .b-dec-select {
   display: inline-block;
   vertical-align: top;
@@ -1060,7 +1097,7 @@ textarea {
 }
 .b-h-part__cnt {
   position: absolute;
-  top: 93px;
+  top: 87px;
   left: 0;
   width: 300px;
 }
@@ -1068,11 +1105,21 @@ textarea {
   font-size: 40px;
   color: #de5b01;
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 9px;
   font-family: Roboto, Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .b-h-part__txt {
   font-size: 24px;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+.b-h-part_curier {
+  background-image: url("../blocks//i-img/head-imgs/head-img-2.jpg");
+}
+.b-h-part_curier .b-h-part__cnt {
+  width: 450px;
 }
 /*---| .b-banner |----------------------start----------------------------------------*/
 .b-banner {
@@ -1226,6 +1273,7 @@ textarea {
 .b-apps {
   *zoom: 1;
   background: #ff791d;
+  margin-top: 110px;
 }
 .b-apps:before,
 .b-apps:after {
@@ -1253,7 +1301,7 @@ textarea {
 }
 /*===| .b-apps |======================end==========================================*//*---| .b-info |----------------------start----------------------------------------*/
 .b-info {
-  background: #ebeee6;
+  background: #e7ece0;
   *zoom: 1;
 }
 .b-info:before,
@@ -1265,9 +1313,19 @@ textarea {
 .b-info:after {
   clear: both;
 }
+.b-info__h {
+  font-size: 30px;
+  line-height: 1;
+  color: #414141;
+  text-transform: uppercase;
+  padding-top: 52px;
+}
 .b-info__col {
   float: left;
   width: 50%;
+}
+.b-info__list {
+  margin-bottom: 20px;
 }
 /*===| .b-info |======================end==========================================*//*---| .b-progress |----------------------start----------------------------------------*/
 .b-progress {
@@ -1369,6 +1427,32 @@ textarea {
   }
   .b-box__form {
     width: auto;
+  }
+  .b-h-part__cnt {
+    width: auto;
+    top: 20px;
+  }
+  .b-h-part_curier .b-h-part__cnt {
+    width: auto;
+    top: 20px;
+  }
+  .b-info__col {
+    float: none;
+    width: auto;
+  }
+  .b-apps__phone {
+    display: none;
+  }
+  .b-apps__txt {
+    width: auto;
+    padding-left: 0;
+  }
+  .b-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .b-wrapper {
+    padding: 0 10px;
   }
 }
 /*===| .b-media |======================end==========================================*/

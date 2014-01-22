@@ -24,16 +24,7 @@
 
 <div class="b-page">
     <div class="b-page__wrap">
-
-        <header class="b-header">
-            <div class="b-wrapper b-wrapper_header b-header__wrap">
-
-                <a class="b-logo" href="/">LoveLess Foundation</a>
-
-                <div class="b-header__slog">Служба курьерской доставки</div>
-            </div>
-        </header>
-
+        <?php require('parts/header.html') ?>
         <div class="b-wrapper">
             <div class="b-content">
                 <h2 class="b-title">Круглосуточная доставка за 2 часа!</h2>
@@ -60,12 +51,12 @@
                                 <a class="b-promo-box__more-a" href="client.html">Узнать больше</a>
                             </div>
                             <div>
-                                <a class="b-button" href="">Оставить заявку</a>
+                                <a class="b-button" href="client-form.html">Оставить заявку</a>
                             </div>
                         </div>
                     </div>
                     <div class="b-promo-box__col">
-                        <a class="b-promo-box__lnk" href="">
+                        <a class="b-promo-box__lnk" href="courier.html">
                         <span class="b-promo-box__img">
 
                         </span>
@@ -85,7 +76,7 @@
                                 <a class="b-promo-box__more-a" href="">Узнать больше</a>
                             </div>
                             <div>
-                                <a class="b-button" href="">Заполнить анкету</a>
+                                <a class="b-button" href="courier-form.html">Заполнить анкету</a>
                             </div>
                         </div>
                     </div>
@@ -120,18 +111,7 @@
         </div>
 
     </div>
-    <footer class="b-footer">
-        <div class="b-wrapper">
-            <div class="b-footer__col-1">
-                © 2013 «Deliv.me» – служба курьерской доставки из магазинов Екатеринбурга
-                У вас возникли вопросы? Напишите нам!
-            </div>
-            <div class="b-footer__col-2">
-                Сайт разработан
-                компанией JetStyle
-            </div>
-        </div>
-    </footer>
+    <?php require('parts/footer.html') ?>
 </div>
 
 
