@@ -51,7 +51,7 @@ module.exports = function (grunt) {
         imageEmbed: {
             dist: {
                 src: ['../publish/style.css'],
-                dest: '../publish/style64.css',
+                dest: '../publish/style.css',
                 options: {
                     deleteAfterEncoding : false
                 }
