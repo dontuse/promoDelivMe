@@ -6,7 +6,8 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,136 +24,397 @@
 
 
 <div class="b-page">
-    <div class="b-page__wrap">
-        <?php require('parts/header.html') ?>
+<div class="b-page__wrap">
+<?php require('parts/header.html') ?>
 
-        <div class="b-wrapper">
-            <div class="b-content">
+<div class="b-wrapper">
+<div class="b-content">
 
-                <h2 class="b-title"></h2>
-                <section class="b-progress">
-                    <div style="background: #ffffff; border-bottom: 3px solid #acaca4">
-                        <div style="background: #ff791d; width: 37%; height: 10px" class="b-progress__line" id="pr"></div>
-                        <div style="left: 10%" class="b-progress__point b-progress__point_active">
-                            <span  class="b-progress-txt">
+<h2 class="b-title"></h2>
+<section class="b-progress">
+    <div style="background: #ffffff; border-bottom: 3px solid #acaca4">
+        <div style="background: #ff791d; width: 37%; height: 10px" class="b-progress__line" id="pr"></div>
+        <div style="left: 10%" class="b-progress__point b-progress__point_active">
+                            <span class="b-progress-txt">
                                 Основные
                             данные
                             </span>
-                        </div>
-                        <div style="left: 36%" class="b-progress__point b-progress__point_active">
+        </div>
+        <div style="left: 36%" class="b-progress__point b-progress__point_active">
                             <span class="b-progress-txt">
                                Персональные данные
                             </span>
-                        </div>
-                        <div style="left:  61%" class="b-progress__point">
+        </div>
+        <div style="left:  61%" class="b-progress__point">
                            <span class="b-progress-txt">
                                 Предпочтения по работе
                             </span>
-                        </div>
+        </div>
 
-                        <div style="left: 87%" class="b-progress__point">
+        <div style="left: 87%" class="b-progress__point">
                             <span class="b-progress-txt">
                                 Способ передвижения
                             </span>
-                        </div>
-                    </div>
-                </section>
+        </div>
+    </div>
+</section>
 
-                <div class="b-box b-box__form-courier">
-                    <div class="b-control">
-                        <div class="b-contol__col-1">
-                            <label class="b-contol__label" class="">ФИО: <i class="b-contol__r">*</i></label>
-                        </div>
-                        <div class="b-contol__col-2">
-                            <input data-bind="value: fio " class="b-contol__input">
-                        </div>
-                    </div>
-
-                    <div class="b-control">
-                        <div class="b-contol__col-1">
-                            <label class="b-contol__label" class="">E-mail: <i class="b-contol__r">*</i></label>
-                        </div>
-                        <div class="b-contol__col-2">
-                            <input data-bind="value: email" class="b-contol__input">
-                        </div>
-                    </div>
-
-                    <div class="b-control">
-                        <div class="b-contol__col-1">
-                            <label class="b-contol__label" class="">Контактный телефон: <i class="b-contol__r">*</i></label>
-                        </div>
-                        <div class="b-contol__col-2">
-                            <input data-bind="value: phone.code" class="b-contol__input">
-                            <input data-bind="value: phone.num" class="b-contol__input">
-                        </div>
-                    </div>
-
-
-                    <div class="b-control">
-                        <div class="b-contol__col-1">
-                            <label class="b-contol__label" class="">Дата рождения: <i class="b-contol__r">*</i></label>
-                        </div>
-                        <div class="b-contol__col-2">
-                            <input id="q" data-bind="value: birthday , datepicker: birthday"  placeholder="дд/мм/гг" class="b-contol__input">
-                            <button data-bind="click: pff">#</button>
-                        </div>
-                    </div>
-                    <div class="b-control">
-                        <div class="b-contol__col-1">
-                            <label class="b-contol__label" class="">Образование: <i class="b-contol__r">*</i></label>
-                        </div>
-                        <div class="b-contol__col-2">
-                            <select data-bind='value: subscription, options: educationValues, optionsCaption: "выберите вариант"'  class="">
-                            </select>
-                        </div>
-                    </div>
-                    <div class="b-control">
-                        <div class="b-contol__col-1">
-                            <label class="b-contol__label" class="">Образование: <i class="b-contol__r">*</i></label>
-                        </div>
-                        <div class="b-contol__col-2">
-                            <label>
-                                <input  checked name="x" type="radio"> М
-                            </label>
-                            <label>
-                                <input name="x" type="radio"> Ж
-                            </label>
-                        </div>
-                    </div>
-                    <pre>
-                        <span data-bind="text: fullPhone"></span>
-                    </pre>
-
-                    <div class="b-control">
-                        <div class="b-contol__col-1">
-                            <label class="b-contol__label" class="">Есть ли у вас опыт работы в сфере обслуживания? <i class="b-contol__r">*</i></label>
-                        </div>
-                        <div class="b-contol__col-2">
-                            <label>
-                                <input  checked name="x" type="radio"> М
-                            </label>
-                            <label>
-                                <input name="x" type="radio"> Ж
-                            </label>
-                        </div>
-                    </div>
-
-                    <button class="b-button" data-bind="click: console.log($root),click: submit;">puff</button>
-                    <button class="b-button" data-bind="click: next">Далее</button>
-                    <button class="b-button" data-bind="click:goToFolder">Далее</button>
-
-                    <div data-bind="visible: next">
-                        <h1>2</h1>
-
-                    </div>
-                </div>
+<div class="b-box b-box__form-courier">
+    <fieldset>
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label" class="">ФИО: <i class="b-contol__r">*</i></label>
             </div>
-
-
+            <div class="b-contol__col-2">
+                <input data-bind="value: fio " class="b-contol__input">
+            </div>
         </div>
 
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label" class="">E-mail: <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <input data-bind="value: email" class="b-contol__input">
+            </div>
+        </div>
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label" class="">Контактный телефон: <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <input data-bind="value: phone.code" class="b-contol__input">
+                <input data-bind="value: phone.num" class="b-contol__input">
+            </div>
+        </div>
+
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label" class="">Дата рождения: <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <input id="q" data-bind="value: birthday , datepicker: birthday" placeholder="дд/мм/гг"
+                       class="b-contol__input">
+                <button data-bind="click: birthday.bind()">#</button>
+            </div>
+        </div>
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label" class="">Образование: <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <select data-bind='value: subscription, options: educationValues, optionsCaption: "выберите вариант"'
+                        class="">
+                </select>
+            </div>
+        </div>
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">Образование: <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label>
+                    <input checked name="x" type="radio"> М
+                </label>
+                <label>
+                    <input name="x" type="radio"> Ж
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    Есть ли у вас опыт работы в сфере обслуживания?  <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input checked name="x" type="radio">
+                    <span class="b-contol__radio-t">2 часа</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t"> 2-4 часа</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">4-6 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">6-8 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">2 часа</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    Укажите часы, в которые вам удобно заниматься доставкой? <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input checked name="x" type="radio">
+                    <span class="b-contol__radio-t">0-6 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">6-12 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">12-18 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">18-24 часов</span>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    В какое время вы заняты на основном месте работы <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input checked name="x" type="radio">
+                    <span class="b-contol__radio-t">утро</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">день</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">вечер </span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">ночь</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    В какие дни недели вы готовы работать? <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">понедельник</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">вторник</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">среда</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">четверг</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">пятница</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">суббота</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">воскресенье</span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    Сколько часов в день вы сможете уделять работе у нас? <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input checked name="x" type="radio">
+                    <span class="b-contol__radio-t">2 часа</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t"> 2-4 часа</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">4-6 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">6-8 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">2 часа</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    Укажите часы, в которые вам удобно заниматься доставкой? <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input checked name="x" type="radio">
+                    <span class="b-contol__radio-t">0-6 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">6-12 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">12-18 часов</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">18-24 часов</span>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    В какое время вы заняты на основном месте работы <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input checked name="x" type="radio">
+                    <span class="b-contol__radio-t">утро</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">день</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">вечер </span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="radio">
+                    <span class="b-contol__radio-t">ночь</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    В какие дни недели вы готовы работать? <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">понедельник</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">вторник</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">среда</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">четверг</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">пятница</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">суббота</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">воскресенье</span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="b-control">
+            <div class="b-contol__col-1">
+                <label class="b-contol__label">
+                    В какие дни недели вы готовы работать? <i class="b-contol__r">*</i></label>
+            </div>
+            <div class="b-contol__col-2">
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">понедельник</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">вторник</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">среда</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">четверг</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">пятница</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">суббота</span>
+                </label>
+                <label class="b-contol__radio">
+                    <input name="x" type="checkbox">
+                    <span class="b-contol__radio-t">воскресенье</span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+
+    <div>
+        <button class="b-button" data-bind="click: console.log($root),click: submit;">puff</button>
+        <button class="b-button" data-bind="click: next">Далее</button>
+        <button class="b-button" data-bind="click:goToFolder">Далее</button>
     </div>
-    <?php require('parts/footer.html') ?>
+
+</div>
+</div>
+
+
+</div>
+
+</div>
+<?php require('parts/footer.html') ?>
 </div>
 
 
