@@ -91,8 +91,10 @@ function formViewModel() {
     });
 
     this.pff = function() {
-        $('#q').focus();
-        console.log('qqqq');
+        //$('#q').focus();
+        console.log(this.datepicker);
+
+        this.datepicker.show();
     }
 
     this.phone = {

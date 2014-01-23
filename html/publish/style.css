@@ -856,6 +856,14 @@ textarea {
   margin-left: 20px;
   color: #6f706b;
 }
+/* ---- --- */
+.b-control_type2 .b-contol__col-1 {
+  float: left;
+  width: 206px;
+}
+.b-control_type2 .b-contol__col-2 {
+  overflow: hidden;
+}
 /*---| .b-logo |----------------------start----------------------------------------*/
 .b-logo,
 .b-logo:visited {
@@ -874,8 +882,7 @@ textarea {
 }
 /*===| .b-logo |======================end==========================================*//*---| .b-button |----------------------start----------------------------------------*/
 .b-button,
-.b-button:visited,
-.b-button:hover {
+.b-button:visited {
   margin: 0;
   padding: 0;
   background: none;
@@ -908,7 +915,15 @@ textarea {
 }
 /*===| .b-button |======================end==========================================*/
 .b-button:hover {
-  background: #96c93c;
+  background-color: #96c93c;
+}
+.b-button_date {
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  background-image: url("../blocks//i-img/calendar.png");
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 /*---| .b-dec-select |----------------------start----------------------------------------*/
 .b-dec-select {
@@ -1540,6 +1555,9 @@ textarea {
   .b-box__form {
     width: auto;
   }
+  .b-box__form-courier {
+    width: auto;
+  }
   .b-h-part__cnt {
     width: auto;
     top: 20px;
@@ -1565,6 +1583,13 @@ textarea {
   }
   .b-wrapper {
     padding: 0 10px;
+  }
+  .b-control_type2 .b-contol__col-1 {
+    width: auto;
+    float: none;
+  }
+  .b-progress-txt {
+    display: none;
   }
 }
 /*===| .b-media |======================end==========================================*/

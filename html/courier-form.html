@@ -61,7 +61,7 @@
 
 <div class="b-box b-box__form-courier">
     <fieldset>
-        <div class="b-control">
+        <div class="b-control b-control_type2">
             <div class="b-contol__col-1">
                 <label class="b-contol__label" class="">ФИО: <i class="b-contol__r">*</i></label>
             </div>
@@ -70,7 +70,7 @@
             </div>
         </div>
 
-        <div class="b-control">
+        <div class="b-control b-control_type2">
             <div class="b-contol__col-1">
                 <label class="b-contol__label" class="">E-mail: <i class="b-contol__r">*</i></label>
             </div>
@@ -79,34 +79,33 @@
             </div>
         </div>
 
-        <div class="b-control">
+        <div class="b-control b-control_type2">
             <div class="b-contol__col-1">
                 <label class="b-contol__label" class="">Контактный телефон: <i class="b-contol__r">*</i></label>
             </div>
             <div class="b-contol__col-2">
                 <input data-bind="value: phone.code" class="b-contol__input">
-                <input data-bind="value: phone.num" class="b-contol__input">
             </div>
         </div>
 
 
-        <div class="b-control">
+        <div class="b-control b-control_type2">
             <div class="b-contol__col-1">
                 <label class="b-contol__label" class="">Дата рождения: <i class="b-contol__r">*</i></label>
             </div>
-            <div class="b-contol__col-2">
+            <div class="b-contol__col-2" style="padding-right: 45px;">
+                <button style="float: right; margin-right: -45px;" class="b-button b-button_date" data-bind="click: function(){$('#q').focus();}"></button>
                 <input id="q" data-bind="value: birthday , datepicker: birthday" placeholder="дд/мм/гг"
                        class="b-contol__input">
-                <button data-bind="click: birthday.bind()">#</button>
             </div>
         </div>
-        <div class="b-control">
+        <div class="b-control b-control_type2">
             <div class="b-contol__col-1">
                 <label class="b-contol__label" class="">Образование: <i class="b-contol__r">*</i></label>
             </div>
             <div class="b-contol__col-2">
                 <select data-bind='value: subscription, options: educationValues, optionsCaption: "выберите вариант"'
-                        class="">
+                        class="b-contol__input">
                 </select>
             </div>
         </div>
