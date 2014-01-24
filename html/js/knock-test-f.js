@@ -17,12 +17,19 @@ ko.bindingHandlers.datepicker = {
 
     },
     //update the control when the view model changes
-    update: function(element, valueAccessor) {
+    update: function(element, valueAccessor , allBindingsAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor()),
             current = $(element).datepicker("getDate");
 
         if (value - current !== 0) {
             $(element).datepicker("setDate", value);
+        }
+
+        console.log(allBindingsAccessor().datepickerEvent.show());
+
+        if(allBindingsAccessor().datepickerEvent.show()) {
+            $(element).datepicker('show');
+            console.log('show');
         }
     }
 };
@@ -64,6 +71,8 @@ function formViewModel() {
 
     var self = this;
 
+    this.datePicker = ko.observable(false);
+
     self.folders = ['1', '2', '3', '4'];
     self.chosenFolderId = ko.observable();
 
@@ -91,10 +100,8 @@ function formViewModel() {
     });
 
     this.pff = function() {
-        //$('#q').focus();
-        console.log(this.datepicker);
-
-        this.datepicker.show();
+        console.log(self.datePicker());
+        self.datePicker() ? self.datePicker(false) : self.datePicker(true)
     }
 
     this.phone = {

@@ -94,8 +94,12 @@
                 <label class="b-contol__label" class="">Дата рождения: <i class="b-contol__r">*</i></label>
             </div>
             <div class="b-contol__col-2" style="padding-right: 45px;">
-                <button style="float: right; margin-right: -45px;" class="b-button b-button_date" data-bind="click: function(){$('#q').focus();}"></button>
-                <input id="q" data-bind="value: birthday , datepicker: birthday" placeholder="дд/мм/гг"
+                <button style="float: right; margin-right: -45px;" class="b-button b-button_date" data-bind="click: pff"></button>
+                <input id="q"
+                       data-bind="value: birthday ,
+                                    datepicker: birthday ,
+                                    datepickerOptions: { minDate: new Date() },
+                                    datepickerEvent: { show : datePicker }" placeholder="дд/мм/гг"
                        class="b-contol__input">
             </div>
         </div>
