@@ -31,9 +31,9 @@
 <div class="b-content">
 
 <h2 class="b-title"></h2>
-<section class="b-progress">
+<section data-bind="progress: progress()" class="b-progress">
     <div style="background: #ffffff; border-bottom: 3px solid #acaca4">
-        <div style="background: #ff791d; width: 37%; height: 10px" class="b-progress__line" id="pr"></div>
+        <div style="background: #ff791d;  height: 10px" class="b-progress__line" id="pr"></div>
         <div style="left: 10%" class="b-progress__point b-progress__point_active">
                             <span class="b-progress-txt">
                                 Основные
@@ -60,7 +60,7 @@
 </section>
 
 <div class="b-box b-box__form-courier">
-    <fieldset>
+    <fieldset data-bind="visible : curFolder() == 1">
         <div class="b-control b-control_type2">
             <div class="b-contol__col-1">
                 <label class="b-contol__label" class="">ФИО: <i class="b-contol__r">*</i></label>
@@ -98,7 +98,7 @@
                 <input id="q"
                        data-bind="value: birthday ,
                                     datepicker: birthday ,
-                                    datepickerOptions: { minDate: new Date() },
+                                    datepickerOptions: { changeMonth: true, changeYear: true},
                                     datepickerEvent: { show : datePicker }" placeholder="дд/мм/гг"
                        class="b-contol__input">
             </div>
@@ -126,8 +126,12 @@
                 </label>
             </div>
         </div>
+
+        <section>
+            <a data-bind="click : next" class="b-button">Далее</a>
+        </section>
     </fieldset>
-    <fieldset>
+    <fieldset data-bind="visible : curFolder() === 2 ">
         <div class="b-control">
             <div class="b-contol__col-1">
                 <label class="b-contol__label">
@@ -245,7 +249,7 @@
             </div>
         </div>
     </fieldset>
-    <fieldset>
+    <fieldset data-bind="visible : curFolder() === 3 ">
         <div class="b-control">
             <div class="b-contol__col-1">
                 <label class="b-contol__label">
@@ -364,7 +368,7 @@
         </div>
     </fieldset>
 
-    <fieldset>
+    <fieldset data-bind="visible : curFolder() === 4 ">
         <div class="b-control">
             <div class="b-contol__col-1">
                 <label class="b-contol__label">

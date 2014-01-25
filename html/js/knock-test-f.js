@@ -1,5 +1,5 @@
 ko.bindingHandlers.datepicker = {
-    init: function(element, valueAccessor, allBindingsAccessor) {
+    init: function (element, valueAccessor, allBindingsAccessor) {
         //initialize datepicker with some optional options
         var options = allBindingsAccessor().datepickerOptions || {};
         $(element).datepicker(options);
@@ -11,13 +11,13 @@ ko.bindingHandlers.datepicker = {
         });
 
         //handle disposal (if KO removes by the template binding)
-        ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
+        ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
             $(element).datepicker("destroy");
         });
 
     },
     //update the control when the view model changes
-    update: function(element, valueAccessor , allBindingsAccessor) {
+    update: function (element, valueAccessor, allBindingsAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor()),
             current = $(element).datepicker("getDate");
 
@@ -27,13 +27,27 @@ ko.bindingHandlers.datepicker = {
 
         console.log(allBindingsAccessor().datepickerEvent.show());
 
-        if(allBindingsAccessor().datepickerEvent.show()) {
+        if (allBindingsAccessor().datepickerEvent.show()) {
             $(element).datepicker('show');
             console.log('show');
         }
     }
 };
 
+ko.bindingHandlers.progress = {
+
+    init: function (element, valueAccessor, allBindingsAccessor) {
+        console.log('progress inited');
+        this.gr = '1111111';
+    },
+
+    update: function (element, valueAccessor, allBindingsAccessor) {
+
+        console.log('update');
+        console.log('update');
+        $(element).find('.b-progress__line').css({width: valueAccessor() + '%'});
+    }
+}
 
 
 ko.validation.localize({
@@ -60,46 +74,49 @@ ko.validation.configure({
     registerExtenders: true,
     messagesOnModified: true,
     insertMessages: true,
-    errorMessageClass : "b-contol__error",
-    errorElementClass : "b-contol__input_error",
+    errorMessageClass: "b-contol__error",
+    errorElementClass: "b-contol__input_error",
     decorateInputElement: true
 });
-
 
 
 function formViewModel() {
 
     var self = this;
 
+    this.progress = ko.observable(0);
+
+    this.curFolder = ko.observable(1);
+
     this.datePicker = ko.observable(false);
 
     self.folders = ['1', '2', '3', '4'];
     self.chosenFolderId = ko.observable();
 
-    self.goToFolder = function(folder) {
+    self.goToFolder = function (folder) {
         self.chosenFolderId(folder);
         console.log(folder)
     };
 
-    this.fio = ko.observable('Абрахим Абрахим ').extend({
+    this.fio = ko.observable().extend({
         required: true
     });
 
-    this.email = ko.observable('mail@dd.ru').extend({
+    this.email = ko.observable().extend({
         email: true,
         required: true
     });
 
-/*    this.phone = ko.observable(123213).extend({
-        required: true,
-        digit: true
-    });*/
+    /*    this.phone = ko.observable(123213).extend({
+     required: true,
+     digit: true
+     });*/
 
     this.birthday = ko.observable().extend({
         required: true
     });
 
-    this.pff = function() {
+    this.pff = function () {
         console.log(self.datePicker());
         self.datePicker() ? self.datePicker(false) : self.datePicker(true)
     }
@@ -115,10 +132,10 @@ function formViewModel() {
         })
     }
 
-    this.fullPhone = ko.computed(function(){
-        return(self.phone.code() +' +++ '+ self.phone.num());
+    this.fullPhone = ko.computed(function () {
+        return(self.phone.code() + ' +++ ' + self.phone.num());
         //return 2 + 2;
-    },this);
+    }, this);
 
 
     this.educationValues = [
@@ -135,9 +152,16 @@ function formViewModel() {
         '05:00 – 06:00'
     ]
 
+
+    var StepValidation1 = [
+        self.fio,
+        self.email
+    ];
+
+    this.errors1 = ko.validation.group(StepValidation1);
+
     this.done = ko.observable(false);
     this.form = ko.observable(true);
-
 
 
     this.submit = function () {
@@ -148,7 +172,7 @@ function formViewModel() {
             $.ajax("ajax/cy.json", {
                 data: ko.toJSON({tasks: self}),
                 type: "post", contentType: "application/json",
-                success: function(result) {
+                success: function (result) {
                     self.done(true);
                     self.form(false);
                 }
@@ -156,18 +180,42 @@ function formViewModel() {
 
 
         } else {
-           // alert('Please check your submission.');
+            // alert('Please check your submission.');
             this.errors.showAllMessages();
         }
     }
 
     this.errors = ko.validation.group(this);
-    //this.errors = ko.validation.group(this.phone);
 
-    this.next = function() {
-        return false;
+
+    this.next = function () {
+
+        switch (self.curFolder()) {
+            case 1:
+                if (self.errors1().length === 0) {
+                    console.log(self.errors1.length);
+                    self.curFolder(self.curFolder() + 1);
+                    self.progress(10);
+                }
+                else {
+                    self.errors1.showAllMessages();
+                    console.log(self.errors1.length);
+                }
+                break
+            case 2:
+                self.curFolder(self.curFolder() + 1);
+                self.progress(37);
+                break
+            case 3:
+                self.curFolder(self.curFolder() + 1);
+                self.progress(62);
+                break
+            default:
+                self.progress(100);
+        }
+
+
     };
-
 
 
 }
