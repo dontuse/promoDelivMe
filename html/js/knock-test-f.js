@@ -1,3 +1,33 @@
+(function (ko) {
+
+    // Don't crash on browsers that are missing localStorage
+    if (typeof (localStorage) === "undefined") {
+        return;
+    }
+
+    ko.extenders.persist = function (target, key) {
+
+        var initialValue = target();
+
+        // Load existing value from localStorage if set
+        if (key && localStorage.getItem(key) !== null) {
+            try {
+                initialValue = JSON.parse(localStorage.getItem(key));
+            } catch (e) {
+            }
+        }
+        target(initialValue);
+
+        // Subscribe to new values and add them to localStorage
+        target.subscribe(function (newValue) {
+            localStorage.setItem(key, ko.toJSON(newValue));
+        });
+        return target;
+
+    };
+
+})(ko);
+
 ko.bindingHandlers.datepicker = {
     init: function (element, valueAccessor, allBindingsAccessor) {
         //initialize datepicker with some optional options
@@ -84,59 +114,37 @@ function formViewModel() {
 
     var self = this;
 
-    this.progress = ko.observable(0);
+    this.progress = ko.observable(10);
 
     this.curFolder = ko.observable(1);
 
     this.datePicker = ko.observable(false);
 
-    self.folders = ['1', '2', '3', '4'];
-    self.chosenFolderId = ko.observable();
+    this.fio = ko.observable()
+        .extend({ persist: 'fio' })
+        .extend({required: true });
 
-    self.goToFolder = function (folder) {
-        self.chosenFolderId(folder);
-        console.log(folder)
-    };
+    this.email = ko.observable()
+        .extend({ persist: 'email' })
+        .extend({ email: true, required: true});
 
-    this.fio = ko.observable().extend({
-        required: true
-    });
 
-    this.email = ko.observable().extend({
-        email: true,
-        required: true
-    });
+    this.phone = ko.observable()
+        .extend({ persist: 'phone' })
+        .extend({ required: true, digit: true });
 
-    /*    this.phone = ko.observable(123213).extend({
-     required: true,
-     digit: true
-     });*/
-
-    this.birthday = ko.observable().extend({
-        required: true
-    });
-
-    this.pff = function () {
-        console.log(self.datePicker());
-        self.datePicker() ? self.datePicker(false) : self.datePicker(true)
-    }
-
-    this.phone = {
-        code: ko.observable(777).extend({
+    this.birthday = ko.observable()
+        .extend({ persist: 'birthday' })
+        .extend({
             required: true,
-            digit: true
-        }),
-        num: ko.observable(213123123).extend({
-            required: true,
-            digit: true
-        })
-    }
+            date: true
+        });
 
-    this.fullPhone = ko.computed(function () {
-        return(self.phone.code() + ' +++ ' + self.phone.num());
-        //return 2 + 2;
-    }, this);
-
+    this.sex = ko.observable('')
+        .extend({ persist: 'sex'})
+        .extend({
+            required: { message: 'Укажите ваш пол' }
+        });
 
     this.educationValues = [
         'начальное',
@@ -146,17 +154,32 @@ function formViewModel() {
         'высшее'
     ];
 
-    this.subscription = ko.observable().extend({ required: true });
+    this.education = ko.observable()
+        .extend({ persist: 'education' })
+        .extend({ required: true });
 
     this.multipleSelectedOptionValues = [
         '05:00 – 06:00'
     ]
 
+    this.pff = function () {
+        console.log(self.datePicker());
+        self.datePicker() ? self.datePicker(false) : self.datePicker(true)
+    }
+
 
     var StepValidation1 = [
         self.fio,
-        self.email
+        self.email,
+        self.birthday,
+        self.education,
+        self.phone,
+        self.sex
     ];
+
+    var StepValidation2 = [];
+    var StepValidation3 = [];
+    var StepValidation4 = [];
 
     this.errors1 = ko.validation.group(StepValidation1);
 
@@ -195,7 +218,7 @@ function formViewModel() {
                 if (self.errors1().length === 0) {
                     console.log(self.errors1.length);
                     self.curFolder(self.curFolder() + 1);
-                    self.progress(10);
+                    self.progress(38);
                 }
                 else {
                     self.errors1.showAllMessages();
@@ -204,18 +227,30 @@ function formViewModel() {
                 break
             case 2:
                 self.curFolder(self.curFolder() + 1);
-                self.progress(37);
+                self.progress(63);
                 break
             case 3:
                 self.curFolder(self.curFolder() + 1);
-                self.progress(62);
+                self.progress(87);
+                break
+            case 4:
+                self.curFolder(self.curFolder() + 1);
+                self.progress(100);
                 break
             default:
                 self.progress(100);
         }
 
-
     };
+
+    this.back = function () {
+        console.log(self.curFolder());
+
+        if (self.curFolder() < 1) {
+            return;
+        }
+        self.curFolder(self.curFolder() - 1);
+    }
 
 
 }

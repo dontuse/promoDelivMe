@@ -912,6 +912,7 @@ textarea {
   -o-transition: background 0.2s ease;
   -ms-transition: background 0.2s ease;
   transition: background 0.2s ease;
+  cursor: pointer;
 }
 /*===| .b-button |======================end==========================================*/
 .b-button:hover {
@@ -1515,7 +1516,26 @@ textarea {
   background-position: -634px 0;
   width: 74px;
 }
-/*===| .b-brief |======================end==========================================*//*===========*/
+/*===| .b-brief |======================end==========================================*/.b-cntr-btns {
+  *zoom: 1;
+  margin-top: 20px;
+}
+.b-cntr-btns:before,
+.b-cntr-btns:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.b-cntr-btns:after {
+  clear: both;
+}
+.b-cntr-btns__l {
+  float: left;
+}
+.b-cntr-btns__r {
+  float: right;
+}
+/*===========*/
 /*---| .b-media |----------------------start----------------------------------------*/
 @media screen and (max-width: 650px) {
   .b-promo-box__col {
