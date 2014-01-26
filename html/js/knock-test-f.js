@@ -162,6 +162,30 @@ function formViewModel() {
         '05:00 – 06:00'
     ]
 
+    this.experience = ko.observable()
+        .extend({ persist: 'experience' })
+        .extend({ required: true });
+
+    self.mobOs = ko.observable()
+        .extend({ persist: 'mobOs' })
+        .extend({ required: true });
+
+    self.weight = ko.observable()
+        .extend({ persist: 'weight' })
+        .extend({ required: true });
+
+    self.extras1 = ko.observable()
+        .extend({ persist: 'extras1' });
+
+    self.extras2 = ko.observable()
+        .extend({ persist: 'extras2' });
+
+    self.extras3 = ko.observable()
+        .extend({ persist: 'extras3' });
+
+    self.extras4 = ko.observable()
+        .extend({ persist: 'extras4' });
+
     this.pff = function () {
         console.log(self.datePicker());
         self.datePicker() ? self.datePicker(false) : self.datePicker(true)
@@ -174,10 +198,14 @@ function formViewModel() {
         self.birthday,
         self.education,
         self.phone,
-        self.sex
+        self.sex,
     ];
 
-    var StepValidation2 = [];
+    var StepValidation2 = [
+        self.experience,
+        self.mobOs,
+        self.weight
+    ];
     var StepValidation3 = [];
     var StepValidation4 = [];
 

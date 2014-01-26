@@ -155,49 +155,20 @@
         </div>
         <div class="b-contol__col-2">
             <label class="b-contol__radio">
-                <input checked name="x" type="radio">
-                <span class="b-contol__radio-t">2 часа</span>
+                <input value="нет" data-bind="checked: experience" name="experience" type="radio">
+                <span class="b-contol__radio-t">нет</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t"> 2-4 часа</span>
+                <input value="1-3 года" data-bind="checked: experience" name="experience" type="radio">
+                <span class="b-contol__radio-t">1-3 года</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">4-6 часов</span>
+                <input value="3-5 лет" data-bind="checked: experience" name="experience" type="radio">
+                <span class="b-contol__radio-t">3-5 лет</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">6-8 часов</span>
-            </label>
-            <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">2 часа</span>
-            </label>
-        </div>
-    </div>
-
-    <div class="b-control">
-        <div class="b-contol__col-1">
-            <label class="b-contol__label">
-                Укажите часы, в которые вам удобно заниматься доставкой? <i class="b-contol__r">*</i></label>
-        </div>
-        <div class="b-contol__col-2">
-            <label class="b-contol__radio">
-                <input checked name="x" type="radio">
-                <span class="b-contol__radio-t">0-6 часов</span>
-            </label>
-            <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">6-12 часов</span>
-            </label>
-            <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">12-18 часов</span>
-            </label>
-            <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">18-24 часов</span>
+                <input value="более 5 лет" data-bind="checked: experience" name="experience" type="radio">
+                <span class="b-contol__radio-t">более 5 лет</span>
             </label>
 
         </div>
@@ -206,61 +177,81 @@
     <div class="b-control">
         <div class="b-contol__col-1">
             <label class="b-contol__label">
-                В какое время вы заняты на основном месте работы <i class="b-contol__r">*</i></label>
+                Какая операционная  система стоит на мобильном устройстве
+                или навигаторе, которым вы пользуетесь?  <i class="b-contol__r">*</i></label>
         </div>
         <div class="b-contol__col-2">
             <label class="b-contol__radio">
-                <input checked name="x" type="radio">
-                <span class="b-contol__radio-t">утро</span>
+                <input data-bind="checked:mobOs" name="mobOs" value="Andoid" type="radio">
+                <span class="b-contol__radio-t">Andoid</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">день</span>
+                <input data-bind="checked:mobOs" name="mobOs" value="iPhone" type="radio">
+                <span class="b-contol__radio-t">iPhone</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">вечер </span>
+                <input data-bind="checked:mobOs" name="mobOs" value="WP" type="radio">
+                <span class="b-contol__radio-t">WP</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="radio">
-                <span class="b-contol__radio-t">ночь</span>
+                <input data-bind="checked:mobOs"  name="mobOs" value="BlB" type="radio">
+                <span class="b-contol__radio-t">BlB  </span>
             </label>
+            <label class="b-contol__radio">
+                <input data-bind="checked:mobOs"  name="mobOs" value="подобная техника отсутствует" type="radio">
+                <span class="b-contol__radio-t">подобная техника отсутствует</span>
+            </label>
+            <div class="b-contol__error" data-bind="validationMessage: mobOs"></div>
         </div>
     </div>
 
     <div class="b-control">
         <div class="b-contol__col-1">
             <label class="b-contol__label">
-                В какие дни недели вы готовы работать? <i class="b-contol__r">*</i></label>
+                Посылки, какого веса вы готовы доставлять? <i class="b-contol__r">*</i></label>
         </div>
         <div class="b-contol__col-2">
             <label class="b-contol__radio">
-                <input name="x" type="checkbox">
-                <span class="b-contol__radio-t">понедельник</span>
+                <input data-bind="checked:weight" name="weight" value="до 1 кг" type="radio">
+                <span class="b-contol__radio-t">до 1 кг</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="checkbox">
-                <span class="b-contol__radio-t">вторник</span>
+                <input data-bind="checked:weight" name="weight" value="3-5 кг" type="radio">
+                <span class="b-contol__radio-t">3-5 кг</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="checkbox">
-                <span class="b-contol__radio-t">среда</span>
+                <input data-bind="checked:weight" name="weight" value="5-10 кг " type="radio">
+                <span class="b-contol__radio-t">5-10 кг </span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="checkbox">
-                <span class="b-contol__radio-t">четверг</span>
+                <input data-bind="checked:weight"  name="weight" value="более 10 кг" type="radio">
+                <span class="b-contol__radio-t">более 10 кг</span>
+            </label>
+            <div class="b-contol__error" data-bind="validationMessage: weight"></div>
+        </div>
+    </div>
+
+    <div class="b-control">
+        <div class="b-contol__col-1">
+            <label class="b-contol__label">
+                Какие дополнительные услуги вы готовы оказать? <i class="b-contol__r">*</i></label>
+        </div>
+        <div class="b-contol__col-2">
+            <label class="b-contol__radio">
+                <input data-bind="checked:extras1"  value="подъем на этаж" type="checkbox">
+                <span class="b-contol__radio-t">подъем на этаж</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="checkbox">
-                <span class="b-contol__radio-t">пятница</span>
+                <input data-bind="checked:extras2"  value="распаковка" type="checkbox">
+                <span class="b-contol__radio-t">распаковка</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="checkbox">
-                <span class="b-contol__radio-t">суббота</span>
+                <input data-bind="checked:extras3"  value="сборка мебели" type="checkbox">
+                <span class="b-contol__radio-t">сборка мебели</span>
             </label>
             <label class="b-contol__radio">
-                <input name="x" type="checkbox">
-                <span class="b-contol__radio-t">воскресенье</span>
+                <input data-bind="checked:extras4"  value="не готов" type="checkbox">
+                <span class="b-contol__radio-t">не готов</span>
             </label>
         </div>
     </div>
