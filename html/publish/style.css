@@ -535,6 +535,7 @@ body {
   color: #414141;
   position: relative;
   min-height: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 a,
 a:visited {
@@ -606,6 +607,14 @@ textarea {
 .b-text {
   margin-bottom: 33px;
   text-align: center;
+  color: #6f706b;
+  font-size: 16px;
+  line-height: 1.3125;
+}
+.b-text__h {
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
 .b-text__u {
   text-transform: uppercase;
@@ -616,7 +625,7 @@ textarea {
 .b-text__p {
   margin: 0;
   margin-bottom: 1em;
-  margin-top: 1em;
+  margin-top: 0;
 }
 .b-text__table {
   width: 100%;
@@ -631,7 +640,12 @@ textarea {
 .b-text__img {
   max-width: 100%;
 }
-/*===| b-text |=================================================================*/.b-body {
+/*===| b-text |=================================================================*/
+/*---| b-text_why |----------------------start----------------------------------------*/
+.b-text_why {
+  margin-top: -12px;
+}
+/*===| b-text_why |======================end==========================================*/.b-body {
   background: url("../blocks//i-img/fone.jpg") no-repeat center top #ebe8e4;
 }
 /*--------------------------*/
@@ -1185,7 +1199,7 @@ textarea {
 .b-h-part__txt {
   font-size: 24px;
   margin-bottom: 20px;
-  line-height: 1.3;
+  line-height: 1.21;
 }
 .b-h-part_curier {
   background-image: url("../blocks//i-img/head-imgs/head-img-2.jpg");
@@ -1317,7 +1331,18 @@ textarea {
 .b-cnt__el_16 .b-cnt__el-arrw:after {
   background-image: url("../blocks//i-img/cnt-icons/16.png");
 }
-/*===| .b-cnt__el |======================end==========================================*//*---| .b-terms |----------------------start----------------------------------------*/
+/*===| .b-cnt__el |======================end==========================================*/
+/*---| .b-cnt_client |----------------------start----------------------------------------*/
+.b-cnt_client .b-cnt__el {
+  height: 152px;
+}
+.b-cnt_client .b-cnt__el-arrw:before {
+  background: url("../blocks//i-img/_b-cnt-arrow2.png") no-repeat center left;
+}
+.b-cnt_client .b-cnt__el-arrw:after {
+  top: 57px;
+}
+/*===| .b-cnt_client |======================end==========================================*//*---| .b-terms |----------------------start----------------------------------------*/
 .b-terms__term {
   background: url("../blocks//i-img/term.png") no-repeat top left;
   height: 117px;
